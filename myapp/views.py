@@ -31,7 +31,7 @@ def get_address(request, lat, lon):
 			data = _get_data_from_nominatim(lat, lon)
 			cache.set(key, json.dumps(data))
 	if data:
-		return JsonResponse({'name': data})
+		return JsonResponse(data)
 	else:
 		return JsonResponse({'Error': "Data not Found"})
 
